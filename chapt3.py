@@ -80,8 +80,40 @@
 # # Jalankan loop tkinter
 # root.mainloop()
 
+# import tkinter as tk
+# from PIL import Image, ImageTk
+
+# # Buat root window
+# root = tk.Tk()
+
+# # Lanjutkan dengan logika lainnya
+# image = Image.open("zoro.jpg")
+# photo = ImageTk.PhotoImage(image)
+
+# # Gunakan gambar dalam widget tkinter
+# label = tk.Label(root, image=photo)
+# label.pack()
+
+# # Fungsi yang akan dipanggil ketika tombol play ditekan
+# def play():
+#     print("Tombol play ditekan!")
+
+# # Tambahkan tombol play
+# play_button = tk.Button(root, text="Play", command=play)
+# play_button.pack()
+
+# # Jalankan loop tkinter
+# root.mainloop()
+
 import tkinter as tk
 from PIL import Image, ImageTk
+import pygame
+
+# Inisialisasi pygame mixer
+pygame.mixer.init()
+
+# Load audio
+pygame.mixer.music.load("victim.mp3")
 
 # Buat root window
 root = tk.Tk()
@@ -96,6 +128,7 @@ label.pack()
 
 # Fungsi yang akan dipanggil ketika tombol play ditekan
 def play():
+    pygame.mixer.music.play()
     print("Tombol play ditekan!")
 
 # Tambahkan tombol play
